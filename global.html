@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+<script>
+    safari.application.addEventListener("command", commandHandler, false);
+
+    function commandHandler(event) {
+        if (event.command === "nutsack-page") {
+            safari.application.activeBrowserWindow.activeTab.page.dispatchMessage("nutsack", "doit");
+        }
+    }
+</script>
+</body>
+</html>
